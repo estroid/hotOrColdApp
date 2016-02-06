@@ -31,8 +31,8 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
         var guessedNum = $('#userGuess').val(); // Setting a variable called guessedNum which is the value of #userGuess
         $('#guessList').append('<li>'+ guessedNum +'</li>'); //guessedNum needs to be concatenated because we want the variable of guessedNum and not the string; also shows guessed numbers from #guessList
 
-// Reset the input form
-    $('.guess-form').trigger('reset');
+// Reset the input form after each guess
+    $('#userGuess').val('');
 
 // --- If-else statement to figure out proximity between rounded off num and guessedNum ---
 
