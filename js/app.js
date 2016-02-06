@@ -15,6 +15,7 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
     var num = Math.round(secretNum); // Declare variable num of secretNum rounded off to nearest integer
     console.log(num);
 
+
 // --- Display information modal box ---
     $('.what').click(function(){
         $(".overlay").fadeIn(1000);
@@ -30,9 +31,8 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
         var guessedNum = $('#userGuess').val(); // Setting a variable called guessedNum which is the value of #userGuess
         $('#guessList').append('<li>'+ guessedNum +'</li>'); //guessedNum needs to be concatenated because we want the variable of guessedNum and not the string; also shows guessed numbers from #guessList
 
-// HOW TO GET FORM TO CLEAR/RESET EACH TIME?????
-        // $('#userGuess').trigger('reset');
-        console.log(guessedNum);
+// Reset the input form
+    $('.guess-form').trigger('reset');
 
 // --- If-else statement to figure out proximity between rounded off num and guessedNum ---
 
@@ -65,6 +65,13 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
         }
     })
 });
+
+// User can start a new game
+    // $(".reset").click(function() {
+    //     $(this).closest('form').find("input[type=text], textarea").val("");
+    //         console.log('I want a new game.');
+
+    // });
 
 // Add a guess iterator to show user the number of guesses they've made so far!!!!!!
 

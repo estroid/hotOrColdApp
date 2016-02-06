@@ -30,7 +30,7 @@ body {
 	height: 96%;
 	margin: 0.8em auto;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-	background-color: #1F253D;
+	background-color: #FFF;
 	text-align: center;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -45,7 +45,7 @@ a {
 	color: black;
 }
 
-ul li {	
+ul li {
 	display: inline;
 }
 
@@ -80,9 +80,13 @@ nav a {
 
 h1 {
 	font-weight: 900;
-	font-size: 3em;
-	padding: 0.8em;
-	color: #fff;
+	font-size: 5em;
+	/*padding: 0.8em;*/
+	color: #FF9933;
+	font-family: 'Monoton', cursive;
+	word-spacing: 0.25em;
+	padding-bottom: 0.5em;
+
 
 }
 
@@ -145,7 +149,7 @@ h1 {
 
 .content > div ul li {
 	padding: 5px 0;
-	display: block;	
+	display: block;
 	list-style-type: disc;
 	line-height: 1.5em;
 }
@@ -208,9 +212,10 @@ h1 {
 
 }
 
+/* TAKE A GUESS */
 h2 {
-	margin: 0 auto;	
-	background: #cc324b;
+	margin: 0 auto;
+	background: black;
 	padding: 1em 0.4em;
 	font-size: 1.5em;
 	font-weight: 400;
@@ -289,11 +294,11 @@ input:focus {
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #95a5a6; 
+   color: #95a5a6;
 }
 
-:-ms-input-placeholder {  
-   color: #95a5a6; 
+:-ms-input-placeholder {
+   color: #95a5a6;
 }
 
 ul.guessBox {
