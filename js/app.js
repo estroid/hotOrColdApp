@@ -1,5 +1,15 @@
 $(document).ready(function(){ // HTML code is completely loaded before running the code here
 
+// Allows user to start a new game
+    $('.new').click(function() { //.click is an event so it's necessary to tie a function to that event
+        getSecretNumber(1, 100); // This is calling/invoking the function getSecretNumber to be used
+        console.log(num);
+// The secretNum needs to be reset, so you could call the getSecretNumber function again inside there
+// The list of guessed numbers needs to be emptied
+// The guess count needs to be set back to 0
+
+    })
+
 // Declare variable of user's guessed number and secret number; place them at the top of the scope and before other functions
 
     var secretNum; // variable with global scope
@@ -15,7 +25,6 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
     var num = Math.round(secretNum); // Declare variable num of secretNum rounded off to nearest integer
     console.log(num);
 
-
 // --- Display information modal box ---
     $('.what').click(function(){
         $(".overlay").fadeIn(1000);
@@ -26,13 +35,20 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
         $(".overlay").fadeOut(1000);
     });
 
+    var count = 0; // Variable for counting guesses
+
     $('.guess-form').submit(function(e){
         e.preventDefault(); // Prevents default behavior in html of refreshing page load
         var guessedNum = $('#userGuess').val(); // Setting a variable called guessedNum which is the value of #userGuess
         $('#guessList').append('<li>'+ guessedNum +'</li>'); //guessedNum needs to be concatenated because we want the variable of guessedNum and not the string; also shows guessed numbers from #guessList
 
 // Reset the input form after each guess
-    $('#userGuess').val('');
+        $('#userGuess').val('');
+
+// Add a guess iterator to show user the number of guesses they've made so far!!!!!!
+        count = ++count; // Assigns a new value to count
+        $('#count').html(count);
+        console.log(count);
 
 // --- If-else statement to figure out proximity between rounded off num and guessedNum ---
 
@@ -66,14 +82,7 @@ $(document).ready(function(){ // HTML code is completely loaded before running t
     })
 });
 
-// User can start a new game
-    // $(".reset").click(function() {
-    //     $(this).closest('form').find("input[type=text], textarea").val("");
-    //         console.log('I want a new game.');
 
-    // });
-
-// Add a guess iterator to show user the number of guesses they've made so far!!!!!!
 
 
 
